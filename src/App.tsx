@@ -1,12 +1,11 @@
 import React from 'react';
-import './App.css';
+import s from './App.module.css';
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
+    <div className={s.App}>
       Hello Comments
     </div>
   );
 }
 
-export default App;
