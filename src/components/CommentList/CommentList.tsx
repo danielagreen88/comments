@@ -44,25 +44,18 @@ export const CommentList = () => {
 
   return (
     <div className={s.commentList}>
-      <div>
-        Comment List
-        <InfiniteScroll
-          dataLength={comments.length}
-          next={fetchMoreData}
-          hasMore={hasMore}
-          loader={getLoader()}
-          height={800}
-          endMessage={getEndMessage()}
-        >
-          {comments.map(comment => (
-            <Comment
-              key={comment.id}
-              text={comment.body}
-              email={comment.email}
-            />
-          ))}
-        </InfiniteScroll>
-      </div>
+      <InfiniteScroll
+        dataLength={comments.length}
+        next={fetchMoreData}
+        hasMore={hasMore}
+        loader={getLoader()}
+        height={800}
+        endMessage={getEndMessage()}
+      >
+        {comments.map(comment => (
+          <Comment key={comment.id} text={comment.body} email={comment.email} />
+        ))}
+      </InfiniteScroll>
     </div>
   );
 };
