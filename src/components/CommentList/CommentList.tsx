@@ -4,7 +4,7 @@ import s from './CommentList.module.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Comment } from '../Comment/Comment';
 
-const COMMENTS_COUNT = 100;
+const COMMENTS_COUNT = 500;
 const COMMENTS_COUNT_PER_PAGE = 20;
 
 export const CommentList = () => {
@@ -49,7 +49,7 @@ export const CommentList = () => {
         next={fetchMoreData}
         hasMore={hasMore}
         loader={getLoader()}
-        height={800}
+        height={400}
         endMessage={getEndMessage()}
       >
         {comments.map(comment => (

@@ -1,0 +1,24 @@
+.newComment {
+  margin-bottom: 20px;
+  background: #f0f2f5;
+  border-radius: 20px;
+  min-width: 480px;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.newComment:before {
+  content: attr(placeholder);
+  position: absolute;
+  color: #65676b;
+}
+
+div[contenteditable] {
+  z-index: 1;
+  position: relative;
+  background: #f0f2f5;
+  outline: 0;
+}
+div[contenteditable]:empty {
+  background: transparent;
+}
