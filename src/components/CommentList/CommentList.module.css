@@ -4,8 +4,7 @@
   justify-content: center;
   width: 200px;
 }
-
-.comment {
-  margin-bottom: 20px;
-  border: 1px solid;
+.endMessage {
+  text-align: center;
+  font-weight: bold;
 }

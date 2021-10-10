@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { getComments } from '../../services/api';
 import s from './CommentList.module.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { Comment } from '../Comment/Comment';
+
+const COMMENTS_COUNT = 500;
+const COMMENTS_COUNT_PER_PAGE = 20;
 
 export const CommentList = () => {
   const [limit, setLimit] = useState({ start: 0, end: 20 });
@@ -17,16 +21,25 @@ export const CommentList = () => {
   }, [limit.start, limit.end]);
 
   const fetchMoreData = () => {
-    if (comments.length >= 500) {
+    if (comments.length >= COMMENTS_COUNT) {
       setHasMore(false);
+      return;
     } else {
       setLimit(limit => {
         return {
-          start: limit.start + 20,
-          end: limit.end + 20,
+          start: limit.start + COMMENTS_COUNT_PER_PAGE,
+          end: limit.end + COMMENTS_COUNT_PER_PAGE,
         };
       });
     }
+  };
+
+  const getEndMessage = () => {
+    return <p className={s.endMessage}>Yay! You have seen it all</p>;
+  };
+
+  const getLoader = () => {
+    return <h4>Loading...</h4>;
   };
 
   return (
@@ -37,19 +50,16 @@ export const CommentList = () => {
           dataLength={comments.length}
           next={fetchMoreData}
           hasMore={hasMore}
-          loader={<h4>Loading...</h4>}
+          loader={getLoader()}
           height={500}
-          endMessage={
-            <p style={{ textAlign: 'center' }}>
-              <b>Yay! You have seen it all</b>
-            </p>
-          }
+          endMessage={getEndMessage()}
         >
-          {comments.map((comment, index) => (
-            <div className={s.comment} key={index}>
-              <div>{index}</div>
-              {comment.body}
-            </div>
+          {comments.map(comment => (
+            <Comment
+              key={comment.id}
+              text={comment.body}
+              email={comment.email}
+            />
           ))}
         </InfiniteScroll>
       </div>
