@@ -1,10 +1,10 @@
 .newComment {
-  margin-bottom: 20px;
+  margin-bottom: 6px;
   background: #f0f2f5;
   border-radius: 20px;
   min-width: 480px;
   font-size: 14px;
-  padding: 10px;
+  padding: 10px 12px;
 }
 
 .newComment:before {
@@ -21,4 +21,21 @@ div[contenteditable] {
 }
 div[contenteditable]:empty {
   background: transparent;
+}
+
+.addCommentWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  margin-bottom: 30px;
+}
+
+.addComment {
+  background: #1877f2;
+  border-color: #1877f2;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  padding: 4px 10px;
+  margin-right: 2px;
 }
