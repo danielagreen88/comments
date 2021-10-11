@@ -7,3 +7,10 @@ export async function getComments(start: number, end: number) {
     )
     .then(res => res.data);
 }
+
+export async function addComment(text: string) {
+  return axios
+    .post('test.steps.me/test/testAssignComment', text)
+    .then(res => res.data)
+    .catch(err => Promise.reject(err));
+}
