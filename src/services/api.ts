@@ -9,8 +9,10 @@ export async function getComments(start: number, end: number) {
 }
 
 export async function addComment(text: string) {
+  const data = { data: text };
+
   return axios
-    .post('test.steps.me/test/testAssignComment', text)
+    .post('test.steps.me/test/testAssignComment', data)
     .then(res => res.data)
     .catch(err => Promise.reject(err));
 }
