@@ -3,9 +3,9 @@ React based comments app
 
 
 ## Installation
-npm i
+`npm i`
 
-npm start
+`npm start`
 
 
 
