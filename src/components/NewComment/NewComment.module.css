@@ -14,7 +14,6 @@
 }
 
 .commentInput[contenteditable] {
-  z-index: 1;
   position: relative;
   background: #f0f2f5;
   outline: 0;
