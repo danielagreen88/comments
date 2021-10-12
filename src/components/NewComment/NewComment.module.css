@@ -43,5 +43,5 @@
 
 .postButton[disabled] {
   background: grey;
-  border-color: grey;
+  border-color: transparent;
 }
