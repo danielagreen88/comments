@@ -22,10 +22,15 @@ export const NewComment = () => {
             setText(text);
           }}
           contentEditable={true}
+          className={s.commentInput}
         />
       </div>
-      <div className={s.addCommentWrapper}>
-        <button className={s.addComment} onClick={onAddComment}>
+      <div className={s.postButtonWrapper}>
+        <button
+          disabled={text === ''}
+          className={s.postButton}
+          onClick={onAddComment}
+        >
           Post
         </button>
       </div>

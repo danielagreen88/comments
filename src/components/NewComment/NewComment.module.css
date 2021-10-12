@@ -13,24 +13,25 @@
   color: #65676b;
 }
 
-div[contenteditable] {
+.commentInput[contenteditable] {
   z-index: 1;
   position: relative;
   background: #f0f2f5;
   outline: 0;
 }
-div[contenteditable]:empty {
+
+.commentInput[contenteditable]:empty {
   background: transparent;
 }
 
-.addCommentWrapper {
+.postButtonWrapper {
   display: flex;
   width: 100%;
   justify-content: end;
   margin-bottom: 30px;
 }
 
-.addComment {
+.postButton {
   background: #1877f2;
   border-color: #1877f2;
   border-radius: 20px;
@@ -38,4 +39,9 @@ div[contenteditable]:empty {
   cursor: pointer;
   padding: 4px 10px;
   margin-right: 2px;
+}
+
+.postButton[disabled] {
+  background: grey;
+  border-color: grey;
 }
