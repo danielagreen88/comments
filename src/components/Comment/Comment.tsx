@@ -1,10 +1,10 @@
 import React from 'react';
 import s from './Comment.module.css';
 
-export const Comment = ({ email, text }) => {
+export const Comment = ({ author, text }) => {
   return (
     <div className={s.comment}>
-      <div className={s.email}>{email}</div>
+      <div className={s.author}>{author}</div>
       <div>{text}</div>
     </div>
   );

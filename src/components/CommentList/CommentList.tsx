@@ -8,9 +8,9 @@ const COMMENTS_COUNT = 500;
 const COMMENTS_COUNT_PER_PAGE = 20;
 
 export const CommentList = () => {
-  const [limit, setLimit] = useState({ start: 0, end: 20 });
   const [comments, setComments] = useState<any>([]);
   const [hasMore, setHasMore] = useState(true);
+  const [limit, setLimit] = useState({ start: 0, end: 20 });
 
   useEffect(() => {
     const loadData = async () => {
@@ -18,20 +18,19 @@ export const CommentList = () => {
       setComments(comments => comments.concat(newComments));
     };
     loadData();
-  }, [limit.start, limit.end]);
+  }, [limit]);
 
   const fetchMoreData = () => {
     if (comments.length >= COMMENTS_COUNT) {
       setHasMore(false);
-      return;
+    } else {
+      setLimit(limit => {
+        return {
+          start: limit.start + COMMENTS_COUNT_PER_PAGE,
+          end: limit.end + COMMENTS_COUNT_PER_PAGE,
+        };
+      });
     }
-
-    setLimit(limit => {
-      return {
-        start: limit.start + COMMENTS_COUNT_PER_PAGE,
-        end: limit.end + COMMENTS_COUNT_PER_PAGE,
-      };
-    });
   };
 
   const getEndMessage = () => {
@@ -49,11 +48,11 @@ export const CommentList = () => {
         next={fetchMoreData}
         hasMore={hasMore}
         loader={getLoader()}
-        height={400}
+        height={500}
         endMessage={getEndMessage()}
       >
         {comments.map(comment => (
-          <Comment key={comment.id} text={comment.body} email={comment.email} />
+          <Comment key={comment.id} text={comment.body} author={comment.name} />
         ))}
       </InfiniteScroll>
     </div>

@@ -18,7 +18,7 @@ export const NewComment = () => {
       <div className={s.newComment} placeholder={'Write a comment...'}>
         <div
           onInput={event => {
-            const text = (event.target as any).innerHTML;
+            const text = (event.target as any).innerText;
             setText(text);
           }}
           contentEditable={true}

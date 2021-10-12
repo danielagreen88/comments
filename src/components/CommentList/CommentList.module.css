@@ -1,7 +1,7 @@
 .commentList {
   display: flex;
-  max-width: 500px;
 }
+
 .endMessage {
   display: flex;
   justify-content: center;

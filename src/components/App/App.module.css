@@ -3,3 +3,11 @@
   align-items: center;
   flex-direction: column;
 }
+
+.appContent {
+  width: 50%;
+}
+
+.header {
+  text-align: center;
+}

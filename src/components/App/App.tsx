@@ -6,9 +6,11 @@ import { NewComment } from '../NewComment/NewComment';
 export const App = () => {
   return (
     <div className={s.app}>
-      <h1>Comments</h1>
-      <NewComment />
-      <CommentList />
+      <div className={s.appContent}>
+        <h1 className={s.header}>Comments</h1>
+        <NewComment />
+        <CommentList />
+      </div>
     </div>
   );
 };
