@@ -9,7 +9,7 @@ export const NewComment = () => {
     try {
       const res = await addComment(text);
     } catch (e) {
-      console.log('error');
+      console.log('handle error');
     }
   };
 
