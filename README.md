@@ -7,7 +7,7 @@ React based comments app
 
 `npm start`
 
-go to `http://localhost:3001/`
+go to `http://localhost:3000/`
 
 
 
