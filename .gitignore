@@ -8,7 +8,6 @@
 
 .history/
 node_modules/
-public/
 build/
 # misc
 .DS_Store
